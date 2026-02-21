@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Services\UserService;
+
 class UserProvider extends ServiceProvider
 {
     /**
@@ -14,10 +15,12 @@ class UserProvider extends ServiceProvider
         $this->app->singleton(UserService::class, function ($app) {
             $users = [
                 [
+                    'id' => 1,
                     'name' => 'John Doe',
                     'gender' => 'Male'
                 ],
                 [
+                    'id' => 2,
                     'name' => 'Jane Doe',
                     'gender' => 'Female'
                 ]
@@ -26,7 +29,6 @@ class UserProvider extends ServiceProvider
         });
     }
     
-
     /**
      * Bootstrap services.
      */
