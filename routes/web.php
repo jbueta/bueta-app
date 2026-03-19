@@ -84,7 +84,7 @@ Route::post('/token', function (Request $request) {
     return $request->all();
 });
 
-Route::get('users', [UserController::class, 'index'])->middleware('user-middlware');
+Route::get('users', [UserController::class, 'index']);
 
 Route::resource('products', ProductController::class);
 

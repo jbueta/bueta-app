@@ -1,38 +1,21 @@
-<h2>Products</h2>
-
-<table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Category</th>
-        </tr>
-    </thead>
-    <tbody>
-        @forelse ($products as $product)
+<x-layout>
+<x-slot:heading>
+    Product List
+</x-slot:>
+<x-table>
+        <thead>
+            <tr>
+                <th>ID</th>
+@@ -12,25 +12,12 @@
+        </thead>
+        <tbody>
+            @foreach($products as $product)
             <tr>
                 <td>{{ $product['id'] }}</td>
                 <td>{{ $product['name'] }}</td>
                 <td>{{ $product['category'] }}</td>
             </tr>
-        @empty
-            <tr>
-                <td colspan="3">No products found.</td>
-            </tr>
-        @endforelse
-    </tbody>
-</table>
-
-<h1>Tasks</h1>
-<ul>
-    @foreach ($tasks as $task)
-        <li>{{ $task }}</li>
-    @endforeach
-</ul>
-
-
-<p>Golbal Variables:</p>
-<p>{{$sharedVariable}}</p>
-
-<p>Product Key:</p>
-<p>{{$productKey}}</p>
+            @endforeach
+        </tbody>
+          </x-table>
+</x-layout>
